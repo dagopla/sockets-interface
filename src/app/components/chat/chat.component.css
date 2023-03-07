@@ -1,0 +1,5 @@
+#chat-mesajes{
+    height: 300px;
+    border-radius: 2px;
+    overflow-y: scroll;
+}
