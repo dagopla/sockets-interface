@@ -11,14 +11,14 @@ export class ChatComponent implements OnInit, OnDestroy {
   texto=''
   mensajeRecibido:any[]=[];
   mesajeSubscription!:Subscription;
-  elementoChat!:HTMLElement;
+  elementoChat!:HTMLDivElement;
 
 
   constructor(public chatService:ChatService){
 
   }
   ngOnInit(){
-    this.elementoChat!= document.getElementById("chat-mesajes");
+    this.elementoChat= <HTMLDivElement>document.getElementById('chat-mesajes')
     this.mesajeSubscription=this.chatService.getMenssage().subscribe(msg=>{
       console.log(msg);
       this.mensajeRecibido.push(msg);

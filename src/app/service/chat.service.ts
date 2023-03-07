@@ -12,12 +12,15 @@ export class ChatService {
   ) { }
   sendMessage(mensaje:string){
     const payload={
-      de:'David',
+      de:this.wsService.getUsuario().nombre,
       cuerpo: mensaje
     }
     this.wsService.emit('mensaje', payload);
   }
   getMenssage(){
     return this.wsService.listen('nuevo-mensaje');
+  }
+  getMessagePrivate(){
+    return this.wsService.listen('mensaje-privado')
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsocketService } from '../../service/websocket.service';
 
 @Component({
   selector: 'app-mensajes',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MensajesComponent {
 
+  constructor(public wsService:WebsocketService){
+
+  }
 }
