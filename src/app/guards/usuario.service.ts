@@ -17,6 +17,7 @@ export class UsuarioService {
     this.router.navigate(['/'])
     return false
   }
+  
 }
 export const canMatchUser:CanMatchFn=()=>{
   return inject(UsuarioService).canMatch()
